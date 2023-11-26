@@ -1,0 +1,38 @@
+<div class="container-fluid" style="width: 95vw;">
+  <div class="row justify-content-center">
+    <div class="col-md-12 col-lg-8">
+      <h2>Sign up</h2>
+
+      <% if flash[:notice] %>
+        <p><%= flash[:notice] %></p>
+      <% end %>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "mt-3" }) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+
+        <div class="mb-3">
+          <%= f.text_field :name, class: "form-control", autofocus: true, autocomplete: "name", placeholder: "Username" %>
+        </div>
+
+        <div class="mb-3">
+          <%= f.email_field :email, class: "form-control", autofocus: true, autocomplete: "email", placeholder: "Email" %>
+        </div>
+
+        <div class="mb-3">
+          <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %>
+          <%= f.password_field :password, class: "form-control", autocomplete: "new-password", placeholder: "Password" %>
+        </div>
+
+        <div class="mb-3">
+          <%= f.password_field :password_confirmation, class: "form-control", autocomplete: "new-password", placeholder: "Confirm Password" %>
+        </div>
+
+        <div class="text-center">
+          <%= f.submit "Sign up", class: "btn btn-primary", style: "width: 100%;" %>
+        </div>
+      <% end %>
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</div>
