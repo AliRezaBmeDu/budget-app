@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :categories
 
   authenticated :user do
-    root to: 'users#index', as: :authenticated_root
+    root to: 'categories#index', as: :authenticated_root
   end
 
   devise_scope :user do
