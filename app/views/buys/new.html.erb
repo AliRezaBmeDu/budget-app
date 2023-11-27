@@ -14,8 +14,18 @@
     <%= f.number_field :amount, class: "form-control", id: "amount" %>
   </div>
   <div class="mb-3">
-    <%= f.label :category_id, class: "form-label" %>
-    <%= f.collection_select :category_id, Category.all, :id, :name, { prompt: 'Select a category' }, class: "form-select" %>
+    <%= f.label :category_ids, class: "form-label" %>
+    <% Category.all.each do |category| %>
+      <div class="form-check">
+        <%= check_box_tag "buy[category_ids][]", category.id, @buy.category_ids.include?(category.id), class: "form-check-input" %>
+        <%= label_tag "buy_category_ids_#{category.id}", category.name, class: "form-check-label" %>
+      </div>
+    <% end %>
   </div>
   <button type="submit" class="btn btn-success">Save Transaction</button>
 <% end %>
+
+
+<div class="d-flex justify-content-center mt-4">
+  <%= link_to 'Back to homepage', homepage_path, class: 'btn btn-warning' %>
+</div>
