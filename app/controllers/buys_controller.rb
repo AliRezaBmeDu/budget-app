@@ -45,6 +45,6 @@ class BuysController < ApplicationController
   end
 
   def buy_params
-    params.require(:buy).permit(:category_id, :name, :amount).merge(author_id: current_user.id)
+    params.require(:buy).permit(:name, :amount, category_ids: []).merge(author_id: current_user.id)
   end
 end
