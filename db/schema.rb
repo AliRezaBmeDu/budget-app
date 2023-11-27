@@ -10,19 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_27_064912) do
+ActiveRecord::Schema[7.1].define(version: 2023_11_27_205134) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "buys", force: :cascade do |t|
     t.bigint "author_id"
-    t.bigint "category_id"
     t.string "name"
     t.float "amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["author_id"], name: "index_buys_on_author_id"
-    t.index ["category_id"], name: "index_buys_on_category_id"
+  end
+
+  create_table "buys_categories", force: :cascade do |t|
+    t.bigint "buy_id"
+    t.bigint "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["buy_id"], name: "index_buys_categories_on_buy_id"
+    t.index ["category_id"], name: "index_buys_categories_on_category_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -45,6 +52,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_27_064912) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "buys", "categories"
   add_foreign_key "buys", "users", column: "author_id"
+  add_foreign_key "buys_categories", "buys"
+  add_foreign_key "buys_categories", "categories"
 end
