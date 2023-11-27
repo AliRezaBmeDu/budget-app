@@ -1,0 +1,17 @@
+<% content_for :head do %>
+  <%= stylesheet_link_tag 'user_index' %>
+<% end %>
+
+<%= render 'helper/navbar' %>
+
+<%= form_for @category, url: categories_path, method: :post do |f| %>
+  <div class="mb-3">
+    <%= f.label :name, class: "form-label" %>
+    <%= f.text_field :name, class: "form-control", id: "name", aria_describedby: "emailHelp" %>
+  </div>
+  <div class="mb-3">
+    <%= f.label :icon, class: "form-label" %>
+    <%= f.text_field :icon, class: "form-control", id: "icon" %>
+  </div>
+  <button type="submit" class="btn btn-primary">Create Category</button>
+<% end %>
