@@ -3,15 +3,17 @@
 <% end %>
 
 <%= render 'helper/navbar' %>
-<h1>List of Categories: </h1>
-<% @categories.each do |category| %>
+<h1>List of Transactions: </h1>
+<% @buys.each do |buy| %>
   <div class="user-profile">
     <ul>
-        <li><h2><%= link_to category.name, category_path(category.id) %></h2></li>
+        <li><h2><%= buy.name %></h2></li>
     </ul>
   </div>
 <% end %>
 
+<!--
 <div class="d-flex justify-content-center mt-4">
-  <%= link_to 'Add New Category', new_category_path, class: 'btn btn-success' %>
+  <%= link_to 'Add New Transaction', new_category_path, class: 'btn btn-success' %>
 </div>
+-->

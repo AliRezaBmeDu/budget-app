@@ -1,5 +1,6 @@
 class Buy < ApplicationRecord
     belongs_to :category
     belongs_to :author, class_name: 'User', foreign_key: 'author_id'
-    t.string :name
+    validates :name, presence: true
+    validates :amount, presence: true
 end
