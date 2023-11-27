@@ -17,6 +17,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_27_064912) do
   create_table "buys", force: :cascade do |t|
     t.bigint "author_id"
     t.bigint "category_id"
+    t.string "name"
     t.float "amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
