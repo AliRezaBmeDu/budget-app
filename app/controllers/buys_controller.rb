@@ -16,7 +16,9 @@ class BuysController < ApplicationController
     @buy = Buy.new(buy_params)
 
     if @buy.save
-      redirect_to @buy, notice: 'Buy was successfully created.'
+      last_selected_category = Category.find(params[:buy][:category_ids].last)
+
+      redirect_to category_path(last_selected_category), notice: 'Transaction was successfully created.'
     else
       render :new
     end
