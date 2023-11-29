@@ -2,6 +2,8 @@
   <%= stylesheet_link_tag 'user_index' %>
 <% end %>
 
+<% content_for :page_name, "New Category" %>
+
 <%= render 'helper/navbar' %>
 
 <%= form_for @category, url: categories_path, method: :post do |f| %>
