@@ -1,13 +1,17 @@
 <% content_for :head do %>
   <%= stylesheet_link_tag 'user_index' %>
 <% end %>
+<% content_for :page_name, "Category" %>
 
 <%= render 'helper/navbar' %>
 <h1>List of Categories: </h1>
 <% @categories.each do |category| %>
   <div class="user-profile">
     <ul>
-        <li><h2><%= link_to category.name, category_path(category.id) %></h2></li>
+        <li>
+          <h2><%= link_to category.name, category_path(category.id) %></h2>
+          <h3>amount $<%= category.total %></h3>
+        </li>
     </ul>
   </div>
 <% end %>

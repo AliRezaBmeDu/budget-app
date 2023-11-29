@@ -2,6 +2,8 @@
   <%= stylesheet_link_tag 'user_index' %>
 <% end %>
 
+<% content_for :page_name, "New Transaction" %>
+
 <%= render 'helper/navbar' %>
 
 <%= form_with(model: [@author, @category, @buy], url: buys_path, method: :post) do |f| %>
