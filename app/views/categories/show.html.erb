@@ -1,12 +1,14 @@
 <% content_for :head do %>
   <%= stylesheet_link_tag 'user_index' %>
 <% end %>
+<% content_for :page_name, "Transactions" %>
 
 <%= render 'helper/navbar' %>
 
 <h1>Category: <%= @category.name %></h1>
 <h2>List of Transactions under this category: </h2>
-<% @category.buys.each do |buy| %>
+<h3>Total amount $<%= @category.total %></h3>
+<% @category.buys.order(created_at: :desc).each do |buy| %>
   <div class="user-profile">
     <ul>
         <li><h2><%= buy.amount %></h2></li>
