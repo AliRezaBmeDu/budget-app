@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
   devise_for :users, path: 'auth'
-
-  get '/', to: 'categories#index', as: :homepage
-
   resources :users, only: [:show, :edit, :update]
   resources :buys
   resources :categories
@@ -12,6 +9,9 @@ Rails.application.routes.draw do
   end
 
   devise_scope :user do
-    root to: "devise/sessions#new", as: :sign_in_root
+    root to: "pages#splash", as: :unauthenticated_root
   end
+
+  get '/', to: 'categories#index', as: :homepage
+  
 end
