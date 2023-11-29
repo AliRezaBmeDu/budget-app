@@ -3,11 +3,22 @@ class CategoriesController < ApplicationController
 
     def index
       @categories = Category.all
+      @categories.each do |category|
+        total = 0
+        category.buys.each do |buy|
+          total += buy.amount
+        end
+        category.total = total
+      end
     end
   
     def show
-      # Assuming you want to show the buys under this category
       @buys = @category.buys
+      total = 0
+      @buys.each do |buy|
+        total += buy.amount
+      end
+      @category.total = total
     end
   
     def new
