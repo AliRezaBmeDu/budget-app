@@ -3,7 +3,7 @@ class CategoriesController < ApplicationController
 
     def index
       @categories = Category.all
-      @categories.each do |category|
+      @categories.includes(:buys).each do |category|
         total = 0
         category.buys.each do |buy|
           total += buy.amount
