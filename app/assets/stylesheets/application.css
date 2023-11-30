@@ -12,8 +12,8 @@
     color: var(--text-color);
 }
 
-body {
-    background-color: #c7c7f0;
+.items-container {
+    background-color: #dfdfda;
 }
 
 .custom-color {
@@ -26,4 +26,8 @@ body {
 
 .custom-font {
     font-size: 1.5rem;
+}
+
+.button-background {
+    background-color: var(--primary-color);
 }
