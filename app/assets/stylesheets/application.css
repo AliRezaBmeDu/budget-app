@@ -37,3 +37,25 @@
     border: none;
     background-color: transparent;
   }
+
+  .btn-background {
+    background-color: var(--second-color);
+    color: white;
+    border: solid 1px white;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.button-container {
+    background-color: var(--second-color);
+    width: 100vw;
+    height: 6rem;
+}
+
+.btn-background:hover {
+    background-color: #2e5e0c;
+}
+
+.btn-background:active {
+    background-color: #1d3b08;
+}
