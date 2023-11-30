@@ -7,7 +7,6 @@ RSpec.describe 'User', type: :feature do
   end
 
   describe 'sign in page' do
-
     it 'have a form for signing in' do
       visit new_user_session_path
       expect(page).to have_field('Email', placeholder: 'Email')

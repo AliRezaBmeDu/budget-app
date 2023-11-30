@@ -14,7 +14,7 @@ RSpec.describe 'Category', type: :feature do
 
   describe 'Test for category' do
     it 'create a new category' do
-        visit categories_path
+      visit categories_path
       click_on 'Add New Category'
       fill_in 'Name', with: 'Shoe'
       fill_in 'icon', with: 'shoe.jpg'
@@ -23,8 +23,8 @@ RSpec.describe 'Category', type: :feature do
     end
 
     it 'page should contain icon' do
-        visit categories_path
-        expect(page).to have_css("img[src*='cloth.jpg']")
+      visit categories_path
+      expect(page).to have_css("img[src*='cloth.jpg']")
     end
 
     it 'navigates to the specific category upon clicking' do

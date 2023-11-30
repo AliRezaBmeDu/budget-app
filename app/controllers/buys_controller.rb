@@ -1,12 +1,11 @@
 class BuysController < ApplicationController
-    before_action :set_buy, only: [:show, :edit, :update, :destroy]
+  before_action :set_buy, only: %i[show edit update destroy]
 
   def index
     @buys = Buy.all
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @buy = Buy.new
@@ -24,8 +23,7 @@ class BuysController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @buy.update(buy_params)
