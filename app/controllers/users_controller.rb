@@ -7,6 +7,9 @@ class UsersController < ApplicationController
   
     def show
     end
+
+    def splash
+    end
   
     def new
       @user = User.new
