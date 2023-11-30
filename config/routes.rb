@@ -13,5 +13,5 @@ Rails.application.routes.draw do
   end
 
   get '/', to: 'categories#index', as: :homepage
-  
+  # get '/buys/new(.format)', to: 'buys#new', as: :new_custom_buy
 end

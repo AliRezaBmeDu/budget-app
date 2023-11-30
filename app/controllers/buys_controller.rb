@@ -9,6 +9,7 @@ class BuysController < ApplicationController
 
   def new
     @buy = Buy.new
+    @cat_id = session[:current_category_id]
   end
 
   def create

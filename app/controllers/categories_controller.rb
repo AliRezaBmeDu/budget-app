@@ -13,6 +13,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
+    session[:current_category_id] = @category.id
     @buys = @category.buys
     total = 0
     @buys.each do |buy|
