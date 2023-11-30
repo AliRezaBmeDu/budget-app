@@ -13,7 +13,7 @@
 }
 
 .items-container {
-    background-color: #dfdfda;
+    background-color: #f1f1ec;
 }
 
 .custom-color {
@@ -31,3 +31,9 @@
 .button-background {
     background-color: var(--primary-color);
 }
+
+.left-arrow {
+    color: white;
+    border: none;
+    background-color: transparent;
+  }

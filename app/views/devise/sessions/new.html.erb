@@ -1,9 +1,11 @@
+<% content_for :page_name, "Login" %>
+<%= render "devise/shared/navreg" %>
+
 <div class="container-fluid mt-5" style="width: 95vw;">
   <div class="row justify-content-center">
     <div class="col-md-12 col-lg-8 mt-5">
-      <h2>Log in</h2>
 
-      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { id: 'loginForm' }) do |f| %>
         <div class="mb-3 mt-5">
           <%= f.email_field :email, class: "form-control", placeholder: "Email", autofocus: true, autocomplete: "email" %>
         </div>
@@ -27,4 +29,15 @@
       <%= render "devise/shared/links" %>
     </div>
   </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const nextButton = document.getElementById('nextButton');
+      const loginForm = document.getElementById('loginForm')
+      if (nextButton) {
+        nextButton.addEventListener('click', function() {
+          loginForm.submit();
+        });
+      }
+    });
+  </script>
 </div>
