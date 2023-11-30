@@ -2,8 +2,8 @@ class CategoriesController < ApplicationController
   before_action :set_category, only: %i[show edit update destroy]
 
   def index
-    @categories = Category.all
-    @categories.includes(:buys).each do |category|
+    @categories = Category.includes(:buys).all
+    @categories.each do |category|
       total = 0
       category.buys.each do |buy|
         total += buy.amount
