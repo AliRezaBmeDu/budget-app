@@ -28,5 +28,8 @@
       </div>
     </div>
     <button type="submit" class="btn btn-success" style="width: 100%;">Save Transaction</button>
+    <div class="d-flex justify-content-center mt-4">
+      <%= link_to 'Back', category_path(id: @cat_id), class: 'btn btn-warning', style: "width: 100%;" %>
+    </div>
   <% end %>
 </div>
