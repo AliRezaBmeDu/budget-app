@@ -29,7 +29,8 @@ RSpec.describe 'Transactions', type: :feature do
     end
 
     it 'creates a new transaction' do
-      visit new_buy_path
+      visit category_path(@category.id)
+      click_on 'Add New Transaction'
       fill_in 'Name', with: 'Test Transaction'
       fill_in 'Amount', with: 20.50
       check 'buy[category_ids][]'
