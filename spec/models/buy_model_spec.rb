@@ -16,7 +16,6 @@ RSpec.describe Buy, type: :model do
       expect(@buy.amount).to eq(60.5)
     end
 
-
     it 'belongs to a user' do
       expect(@buy.author_id).to eq(@user.id)
     end
