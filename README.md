@@ -64,7 +64,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-> Add a link to your deployed project.
+- [A walkthrough Video](https://drive.google.com/file/d/139r9cl-8ZieNQSVEjn8R-wh_TvzgMHgK/view?usp=sharing)
 
 - [Live Demo Link](https://google.com)
 
