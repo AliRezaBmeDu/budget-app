@@ -50,6 +50,8 @@
   background-color: var(--second-color);
   width: 100vw;
   height: 6rem;
+  position:fixed;
+  bottom: 0;
 }
 
 .btn-background:hover {

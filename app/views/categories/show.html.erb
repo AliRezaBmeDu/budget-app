@@ -1,7 +1,7 @@
 <%= stylesheet_link_tag 'category_index' %>
 <% content_for :page_name, "Transactions" %>
 
-<%= render 'helper/navbar' %>
+<%= render 'helper/navform' %>
 <div class="px-4 d-flex justify-content-between align-items-center top-card">
   <h2 class="second-color"><%= @category.name %></h2>
   <h2 class="second-color">$ <%= @category.total %></h2>
@@ -17,12 +17,8 @@
       </div>
     </div>
   <% end %>
+</div>
 
-  <div class="d-flex justify-content-center mt-4">
-    <%= link_to 'Add New Transaction', new_buy_path, id: 'add-transaction', class: 'btn btn-primary', style: "width: 100%;" %>
-  </div>
-  <div class="d-flex justify-content-center mt-4">
-    <%= link_to 'Back', homepage_path, class: 'btn btn-warning', style: "width: 100%;" %>
-  </div>
-
+<div class="button-container d-flex align-items-center justify-content-center">
+  <%= link_to 'Add New Transaction', new_buy_path, class: "btn-background p-3 text-center", style: "width:80%;" %>
 </div>
