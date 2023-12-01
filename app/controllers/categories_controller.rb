@@ -2,13 +2,9 @@ class CategoriesController < ApplicationController
   before_action :set_category, only: %i[show edit update destroy]
 
   def index
-    @categories = Category.includes(:buys).all
+    @categories = Category.includes(:buys).where(user_id: current_user.id)
     @categories.each do |category|
-      total = 0
-      category.buys.each do |buy|
-        total += buy.amount
-      end
-      category.total = total
+      category.total = category.buys.sum(:amount)
     end
   end
 
@@ -58,6 +54,6 @@ class CategoriesController < ApplicationController
   end
 
   def category_params
-    params.require(:category).permit(:name, :description, :other_attributes)
+    params.require(:category).permit(:name, :icon).merge(user_id: current_user.id)
   end
 end
