@@ -33,8 +33,8 @@ RSpec.describe 'Transactions', type: :feature do
       click_on 'Add New Transaction'
       fill_in 'Name', with: 'New Transaction'
       fill_in 'Amount', with: 20.50
-      
-      find(".form-check-input", match: :first).click
+
+      find('.form-check-input', match: :first).click
 
       click_button 'Save Transaction'
 
