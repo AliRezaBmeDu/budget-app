@@ -4,7 +4,7 @@ RSpec.describe 'Category', type: :feature do
   before(:each) do
     @user = User.create(name: 'tom', email: 'tom@example.com', password: '1234567890',
                         password_confirmation: '1234567890')
-    @category = Category.create(name: 'Cloth', icon: 'cloth.jpg')
+    @category = Category.create(name: 'Cloth', icon: 'cloth.jpg', user_id: @user.id)
 
     visit new_user_session_path
     fill_in 'Email', with: @user.email

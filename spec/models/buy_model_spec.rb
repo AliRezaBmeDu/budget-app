@@ -4,7 +4,7 @@ RSpec.describe Buy, type: :model do
   describe 'creation' do
     before :all do
       @user = User.create(name: 'Tom', email: 'tom@example.com', password: '123456')
-      @category = Category.create(name: 'Cloth', icon: 'cloth.jpg')
+      @category = Category.create(name: 'Cloth', icon: 'cloth.jpg', user_id: @user.id)
       @buy = Buy.create(name: 'Shirt', amount: 60.5, category_ids: [@category.id], author_id: @user.id)
     end
 

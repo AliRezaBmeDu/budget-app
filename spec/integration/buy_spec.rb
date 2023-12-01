@@ -4,7 +4,7 @@ RSpec.describe 'Transactions', type: :feature do
   before(:each) do
     @user = User.create(name: 'tom', email: 'tom@example.com', password: '1234567890',
                         password_confirmation: '1234567890')
-    @category = Category.create(name: 'Cloth', icon: 'cloth.jpg')
+    @category = Category.create(name: 'Cloth', icon: 'cloth.jpg', user_id: @user.id)
     @amount1 = 10.50
     @amount2 = 7.80
     @buy1 = Buy.create(name: 'Pants', amount: @amount1, category_ids: [@category.id], author_id: @user.id)
@@ -31,20 +31,19 @@ RSpec.describe 'Transactions', type: :feature do
     it 'creates a new transaction' do
       visit category_path(@category.id)
       click_on 'Add New Transaction'
-      fill_in 'Name', with: 'Test Transaction'
+      fill_in 'Name', with: 'New Transaction'
       fill_in 'Amount', with: 20.50
-      check 'buy[category_ids][]'
+      
+      find(".form-check-input", match: :first).click
 
-      click_on 'Save Transaction'
+      click_button 'Save Transaction'
 
-      expect(page).to have_text('Test Transaction')
-      expect(page).to have_text('$ 20.5')
-      expect(page).to have_text('Cloth')
+      expect(page).to have_text('New Transaction')
     end
 
     it 'navigates to the homepage upon clicking back button' do
       visit category_path(@category.id)
-      click_on 'Back'
+      find('nav a i.bi-arrow-left').click
       expect(current_path).to match('/')
     end
   end

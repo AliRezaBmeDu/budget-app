@@ -34,7 +34,7 @@
         <div class="d-flex flex-wrap">
           <% current_user.categories.each do |category| %>
             <div class="form-check mx-3">
-              <%= check_box_tag "buy[category_ids][]", category.id, @buy.category_ids.include?(category.id), class: "form-check-input"  %>
+              <%= check_box_tag "buy[category_ids][]", category.id, @buy.category_ids.include?(category.id), class: "form-check-input" %>
               <%= label_tag "buy_category_ids_#{category.id}", category.name, class: "form-check-label" %>
             </div>
           <% end %>
