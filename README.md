@@ -24,7 +24,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 My-Blog <a name="about-project"></a>
+# 📖 Budget-Application <a name="about-project"></a>
 
 **Budget-App** is a Ruby-On-Rails built application which is a classic example of a budget application where users can store their transactions under the categories. The data storage is taken care of by Postgresql database.
 
@@ -64,7 +64,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-> Add a link to your deployed project.
+- [A walkthrough Video](https://drive.google.com/file/d/139r9cl-8ZieNQSVEjn8R-wh_TvzgMHgK/view?usp=sharing)
 
 - [Live Demo Link](https://google.com)
 
