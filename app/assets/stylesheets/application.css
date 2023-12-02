@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap');
+
+:root {
+  --primary-color: #3778c2;
+  --second-color: #5fb523;
+  --text-color: #434b54;
+  --nav-text-color: #c7c7f0;
+}
+
+* {
+  font-family: 'Figtree', 'Montserrat', Arial, sans-serif;
+  color: var(--text-color);
+}
+
+.items-container {
+  background-color: #f1f1ec;
+}
+
+.custom-color {
+  background-color: var(--primary-color);
+}
+
+.custom-text {
+  color: var(--nav-text-color);
+}
+
+.custom-font {
+  font-size: 1.5rem;
+}
+
+.button-background {
+  background-color: var(--primary-color);
+}
+
+.left-arrow {
+  color: white;
+  border: none;
+  background-color: transparent;
+}
+
+.btn-background {
+  background-color: var(--second-color);
+  color: white;
+  border: solid 1px white;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.button-container {
+  background-color: var(--second-color);
+  width: 100vw;
+  height: 6rem;
+  position: fixed;
+  bottom: 0;
+}
+
+.btn-background:hover {
+  background-color: #2e5e0c;
+}
+
+.btn-background:active {
+  background-color: #1d3b08;
+}

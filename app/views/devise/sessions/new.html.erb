@@ -1,0 +1,43 @@
+<% content_for :page_name, "Login" %>
+<%= render "devise/shared/navreg" %>
+
+<div class="container-fluid mt-5" style="width: 95vw;">
+  <div class="row justify-content-center">
+    <div class="col-md-12 col-lg-8 mt-5">
+
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { id: 'loginForm' }) do |f| %>
+        <div class="mb-3 mt-5">
+          <%= f.email_field :email, class: "form-control", placeholder: "Email", autofocus: true, autocomplete: "email" %>
+        </div>
+
+        <div class="mb-5">
+          <%= f.password_field :password, class: "form-control", placeholder: "Password", autocomplete: "current-password" %>
+        </div>
+
+        <% if devise_mapping.rememberable? %>
+          <div class="mb-3 form-check">
+            <%= f.check_box :remember_me, class: "form-check-input" %>
+            <%= f.label :remember_me, class: "form-check-label" %>
+          </div>
+        <% end %>
+
+        <div class="mb-3 text-center mt-3">
+          <%= f.submit "Log in", class: "btn btn-primary btn-block", style: "width: 100%;" %>
+        </div>
+      <% end %>
+
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const nextButton = document.getElementById('nextButton');
+      const loginForm = document.getElementById('loginForm')
+      if (nextButton) {
+        nextButton.addEventListener('click', function() {
+          loginForm.submit();
+        });
+      }
+    });
+  </script>
+</div>

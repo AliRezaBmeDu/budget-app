@@ -1,0 +1,17 @@
+<nav class="navbar navbar-expand-lg custom-color custom-text">
+  <div class="container-fluid">
+    <%= link_to unauthenticated_root_path do %>
+      <i class="bi bi-arrow-left" style="color: white;"></i>
+    <% end %>
+    <div>
+      <span class="navbar-text mx-auto text-white custom-font">
+        <%= yield(:page_name) || "Default Page Name" %>
+      </span>
+    </div>
+    <div>
+        <span class="mx-auto text-white custom-font btn btn-outline-primary" id="nextButton"style="border:none;">
+            Next
+        </span>
+    </div>
+  </div>
+</nav>

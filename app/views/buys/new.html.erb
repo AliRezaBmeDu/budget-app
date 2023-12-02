@@ -1,0 +1,48 @@
+<% content_for :head do %>
+  <%= stylesheet_link_tag 'category_index' %>
+<% end %>
+
+<% content_for :page_name, "New Transaction" %>
+
+<nav class="navbar navbar-expand-lg custom-color custom-text">
+  <div class="container-fluid">
+    <%= link_to category_path(id: @cat_id) do %>
+      <i class="bi bi-arrow-left" style="color: white;"></i>
+    <% end %>
+    <div>
+      <span class="navbar-text mx-auto text-white custom-font">
+        <%= yield(:page_name) || "Default Page Name" %>
+      </span>
+    </div>
+    <div>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid d-flex flex-column">
+  <div class="flex-grow-1">
+    <%= form_with(model: [@author, @category, @buy], url: buys_path, method: :post) do |f| %>
+      <div class="mt-5 mb-3">
+        <%= f.text_field :name, class: "form-control", id: "name", placeholder: "Name", required: true  %>
+      </div>
+      <div class="mb-3">
+        <%= f.number_field :amount, class: "form-control", id: "amount", placeholder: "Amount", required: true  %>
+      </div>
+      <div class="mb-3">
+        <p>Categories (please select at least one): </p>
+        <div class="d-flex flex-wrap">
+          <% current_user.categories.each do |category| %>
+            <div class="form-check mx-3">
+              <%= check_box_tag "buy[category_ids][]", category.id, @buy.category_ids.include?(category.id), class: "form-check-input" %>
+              <%= label_tag "buy_category_ids_#{category.id}", category.name, class: "form-check-label" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="button-container d-flex align-items-center justify-content-center">
+      <button type="submit" class="btn-background p-3" style="width: 80%;">Save Transaction</button>
+    </div>
+  <% end %>

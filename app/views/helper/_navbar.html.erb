@@ -1,0 +1,71 @@
+<nav class="navbar navbar-expand-lg custom-color custom-text">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div>
+      <span class="navbar-text mx-auto text-white custom-font">
+        <%= yield(:page_name) || "Default Page Name" %>
+      </span>
+    </div>
+    <div></div>
+
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01"> 
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <%= link_to "Home", authenticated_root_path, class: "nav-link active text-white", aria: { current: "page" } %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Transactions", "#", class: "nav-link text-white" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Edit Account", edit_user_registration_path, class: "btn btn-outline-warning text-white" %>
+        </li>
+      </ul>
+
+      <!-- Action Buttons -->
+      <div class="d-flex">
+        <!-- Search Icon -->
+        <span class="me-2 custom-text">
+          <!-- Add your search icon or button here -->
+          <i class="fa fa-search"></i>
+        </span>
+
+        <!-- Sign Out Button -->
+        <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-outline-danger me-2 text-white" %>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+<!--
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <%= link_to 'Home', authenticated_root_path, class: 'navbar-brand text-primary fs-4 fw-bold' %>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <% if user_signed_in? %>
+          <li class="nav-item">
+            <%= link_to 'Categories', categories_path, class: 'nav-link' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to 'Sign up', new_user_registration_path, class: 'nav-link' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Sign in', new_user_session_path, class: 'nav-link' %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>
+-->

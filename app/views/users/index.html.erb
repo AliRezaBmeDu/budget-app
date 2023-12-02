@@ -1,0 +1,13 @@
+<% content_for :head do %>
+  <%= stylesheet_link_tag 'user_index' %>
+<% end %>
+
+<%= render 'helper/navbar' %>
+<h1>List of users: </h1>
+<% @users.each do |user| %>
+  <div class="user-profile">
+    <ul>
+        <li><h2><%= user.name %></h2></li>
+    </ul>
+  </div>
+<% end %>

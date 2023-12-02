@@ -1,0 +1,15 @@
+<% content_for :head do %>
+  <%= stylesheet_link_tag 'user_index' %>
+<% end %>
+<% content_for :page_name, "All transactions" %>
+
+<%= render 'helper/navbar' %>
+<h1>List of Transactions: </h1>
+<% @buys.each do |buy| %>
+  <div class="user-profile">
+    <ul>
+        <li><h2><%= buy.name %></h2></li>
+    </ul>
+  </div>
+<% end %>
+
